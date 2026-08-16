@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>マウスカーソルメーカー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>マウスカーソルメーカー</h1>
+      <p>
+        自分だけのマウスカーソルを作ろう！<br />画像をアップロードすると、オリジナルのマウスカーソル用のZIPファイルが生成されます。
+      </p>
+
+      <div class="upload-area">
+        <label for="uploadInput" class="upload-label">
+          <input type="file" id="uploadInput" accept="image/*" />
+        </label>
+      </div>
+
+      <div class="preview-header">
+        <h2>プレビュー</h2>
+        <button id="downloadAll" disabled>ZIPでまとめてダウンロード</button>
+      </div>
+
+      <label class="label">合成結果 (32x32):</label>
+      <!-- 合成結果の画像がここに並びます（JS側とID名を統一） -->
+      <div
+        id="output-container"
+        style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap"
+      ></div>
+
+      <!-- 処理用Canvas（非表示） -->
+      <canvas
+        id="output-canvas"
+        width="32"
+        height="32"
+        style="display: none"
+      ></canvas>
+
+      <script src="main.js"></script>
+    </div>
+  </body>
+</html>
